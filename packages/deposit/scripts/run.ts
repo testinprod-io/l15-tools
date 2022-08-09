@@ -61,7 +61,7 @@ const main = async () => {
       .approve(inbox.address, amount, { gasLimit: 1000000 })
   ).wait()
   await (
-    await inbox.connect(l1Wallet).depositNativeToken(amount, 0, {
+    await inbox.connect(l1Wallet).depositNativeToken(amount, utils.parseEther('0.001'), {
       gasLimit: 10000000,
     })
   ).wait()
