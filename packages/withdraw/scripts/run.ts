@@ -28,15 +28,15 @@ const main = async () => {
   const l1Balance = utils.formatEther(
     await nativeToken.connect(l1Wallet).balanceOf(l1Wallet.address)
   )
-  if (l1Balance === '0.0') {
-    console.log('[L1] Insufficient balance. Deposit first!')
-    process.exit()
-  }
   console.log(`[L1] Balance: ${l1Balance}`)
 
   const l2Balance = utils.formatEther(
     await l2Provider.getBalance(l2Wallet.address)
   )
+  if (l2Balance === '0.0') {
+    console.log('[L2] Insufficient balance. Deposit first!')
+    process.exit()
+  }
   console.log(`[L2] Balance: ${l2Balance}`)
 
   /*
