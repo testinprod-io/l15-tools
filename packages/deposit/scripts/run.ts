@@ -62,7 +62,7 @@ const main = async () => {
   ).wait()
   await (
     await inbox.connect(l1Wallet).depositNativeToken(amount, utils.parseEther('0.001'), {
-      gasLimit: 10000000,
+      gasLimit: 1000000,
     })
   ).wait()
   process.stdout.write('done\n')
